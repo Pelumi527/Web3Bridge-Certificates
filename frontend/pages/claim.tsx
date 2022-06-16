@@ -3,21 +3,25 @@ import { useState } from "react"; // State management
 import { token } from "state/token"; // Global state: Tokens
 import Layout from "components/Layout"; // Layout wrapper
 import styles from "styles/pages/Claim.module.scss"; // Page styles
-import { AddressList } from '../components/addresses';
+// import { AddressList } from '../components/addresses';
+
+import {config} from "config";
+
 
 export default function Claim() {
+  const addressList = config.airdrop;
   // Global ETH state
   const { address, unlock }: { address: string | null; unlock: Function } =
     eth.useContainer();
   // Global token state
   const {
     dataLoading,
-    numTokens,
+    tokenId,
     alreadyClaimed,
     claimAirdrop,
   }: {
     dataLoading: boolean;
-    numTokens: number;
+    tokenId: string |  null;
     alreadyClaimed: boolean;
     claimAirdrop: Function;
   } = token.useContainer();
@@ -27,7 +31,7 @@ export default function Claim() {
 
   const addLink = () => {
     if (typeof address==='string') {
-      let index = AddressList[address];
+      let index = addressList[address];
       location.href = `https://bafybeigceihbii6flqhdtnvleu4wiwbsekbju2hzbsjjw2nmv5u752fywq.ipfs.dweb.link/${index}.jpeg`;
     }
   }
@@ -55,7 +59,7 @@ export default function Claim() {
             <h1>Loading details...</h1>
             <p>Please hold while we collect details about your address.</p>
           </div>
-        ) : numTokens == 0 ? (
+        ) : tokenId===null ? (
           // Not part of airdrop
           <div className={styles.card}>
             <h1>Ineligible Address</h1>
