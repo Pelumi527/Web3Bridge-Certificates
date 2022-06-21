@@ -7,10 +7,11 @@ export default function MerkleAirdropStarter({
   Component,
   pageProps,
 }: AppProps) {
+  const AnyComponent = Component as any;
   return (
     // Wrap application in global state provider
     <StateProvider>
-      <Component {...pageProps} />
+      <AnyComponent {...pageProps} />
     </StateProvider>
   );
 }
