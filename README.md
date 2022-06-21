@@ -21,14 +21,14 @@ Steps:
 
 ### Contributors
 - [Cohort VI - Web3Bridge](Web3bridge.com)
-### How to Contribute
+<!-- ### How to Contribute
 - Fork the repository
 - Git clone https://github.com/your-username/merkle-airdrop-starter-ERC721
 - git checkout -b branch name
 - git remote add upstream https://github.com/sorxcode/merkle-airdrop-starter-ERC721
 - git pull upstream master
 - git commit -m "commit message"
-- git push -u origin HEAD
+- git push -u origin HEAD -->
 
 ## 🤝 Contributing
 
