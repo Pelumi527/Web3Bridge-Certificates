@@ -2,8 +2,8 @@
 
 A Web3Bridge certificate contract that is an ERC721 token airdrop to a Merkle tree of recipients(Web3Bridge Students).
 
-### Live Version
-- [Claim Web3Bridge Certificate](https://merkle-airdrop-starter-erc-721.vercel.app/)
+<!-- ### Live Version
+- [Claim Web3Bridge Certificate](https://merkle-airdrop-starter-erc-721.vercel.app/) -->
 
 ### Built With:
 - Solidity
