@@ -17,17 +17,32 @@ interface ICheatcode {
 contract Tests is MerkleClaimERC721Test {
     // Setup correct proof for Alice
     bytes32[5] aliceProof = [
-      bytes32(0x0b3da53306c1495659b5cc9f744ea981c2a3f127b250e5c8caedfaa97c0e676b),
-      bytes32(0x3bf2db328f72a7b881246c777705344a7272736afde1cc2753f0948920f8e123),
-      bytes32(0xd63c190d9628e0aea5a46c368f46467e98b766ab168992dbe62db8abccad0798),
-      bytes32(0x82284e869d05827e4670ce9699ee08d165eacccfa53e56ea0214300eab2f009a),
-      bytes32(0xe2cdd186abccbe4745f410c91aee16804f311a566d45c00273f006d9d21e0b6f)
+      bytes32(0x8c54fbab03d8610c32de66e6a3013f9fa7991ef93ea5052fd0f485c08f43306d),
+      bytes32(0x590cc6e1061d63d2350d3870cf09245a4c3e5a39d1c1792c4b4e7c8a179e39c1),
+      bytes32(0x35356e212207ef7aff01ac88adbd60872f7f264e96fb57d40ef2d2753f08c3e8),
+      bytes32(0xb6a8db8dd76cffbcfdc7e858c90e5602d60c6f7aaf6eddcbfc0c0018dedbe130),
+      bytes32(0x40afdec2467a6b95fc68c5e0b657de8effc7893fab9030aef587dc9c932bb173)
     ];
+
+ bytes32[5] bobProof =   [
+  bytes32(0x801027094aa2b83851b3720319eb0e1bc5624344d6d54f6435d54f75bdb3359e),
+  bytes32(0x21c94d29415451a6132205d86f1271ae7c887f07022da23e29e07c8b63c9821f),
+  bytes32(0x36aaa0c1e7c9839c9c8c86ad7a107f358a086d15f5093403bf66972b50211aa5),
+  bytes32(0x352aeb9696b03fc50d3e28d0a2cf4ad1d9e0200b64538c004815da7bf09c00d4),
+  bytes32(0x1156a65bf200f88be8a3199069c6bf9ff89dbed19c4d26dca4a662d4c71231a2)
+];
 
   function getAliceProof() internal view returns (bytes32[] memory _aliceProof){
     _aliceProof = new bytes32[](5);
     for (uint8 i = 0; i < aliceProof.length; i++) {
       _aliceProof[i] = aliceProof[i];
+    }
+  }
+
+  function getBobProof() internal view returns (bytes32[] memory _bobProof){
+    _bobProof = new bytes32[](5);
+    for (uint8 i = 0; i < bobProof.length; i++) {
+      _bobProof[i] = bobProof[i];
     }
   }
     
@@ -42,13 +57,14 @@ contract Tests is MerkleClaimERC721Test {
       // Claiming for Alice
       ALICE.ADDRESS(),
       // token 1
-      1,
+      0,
       // With valid proof
       getAliceProof()
     );
 
     // Collect Alice balance of tokens after claim
     uint256 alicePostBalance = ALICE.tokenBalance();
+    ALICE.tokenurl(1);
 
     // Assert Alice balance before + 1 token = after balance
     assertEq(alicePostBalance, alicePreBalance + 1);
@@ -95,7 +111,7 @@ contract Tests is MerkleClaimERC721Test {
   }
 
   /// @notice Prevent Bob from claiming
-  function testFailBobClaim() public {
+  function testBobClaim() public {
     // Setup correct proof for Alice
     bytes32[] memory _aliceProof = new bytes32[](1);
     _aliceProof[0] = 0xceeae64152a2deaf8c661fccd5645458ba20261b16d2f6e090fe908b0ac9ca88;
@@ -105,11 +121,15 @@ contract Tests is MerkleClaimERC721Test {
       // Claiming for Bob
       BOB.ADDRESS(),
      // token 1
-      1,
+      10,
        // With valid proof (for Alice)
-      _aliceProof
+      getBobProof()
     );
+
+     BOB.tokenurl(10);
   }
+
+ 
 
   /// @notice Let Bob claim on behalf of Alice
   function testBobClaimForAlice() public {

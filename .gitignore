@@ -5,6 +5,7 @@
 contracts/cache
 contracts/out
 *verify.sh
+contracts/.env
 
 # Generator
 generator/node_modules

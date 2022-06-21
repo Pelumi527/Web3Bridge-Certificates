@@ -41,4 +41,8 @@ contract MerkleClaimERC721User {
   function claim(address to, uint _id, bytes32[] calldata proof) public {
     TOKEN.claim(to, _id, proof);
   }
+
+  function tokenurl(uint _id) public view returns(string memory){
+    return  TOKEN.tokenURI(_id);
+  }
 }

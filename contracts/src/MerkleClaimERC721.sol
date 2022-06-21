@@ -25,7 +25,7 @@ contract MerkleClaimERC721 is ERC721URIStorage, Ownable {
   uint48 id;
 
   // token baseURI
-  string baseURI = "ipfs://bafybeigceihbii6flqhdtnvleu4wiwbsekbju2hzbsjjw2nmv5u752fywq/";
+  string baseURI = "https://ipfs.io/ipfs/QmdZ4NBdqsNUcHzNn1hQtaagvEw3tCHR2kYUFtv8oQyqx5/";
 
   /// @notice Mapping of addresses who have claimed tokens
   mapping(address => bool) public hasClaimed;
@@ -102,13 +102,13 @@ contract MerkleClaimERC721 is ERC721URIStorage, Ownable {
     // Set address to claimed
     hasClaimed[_to] = true;
 
-    id++;
     // Mint token to address
-    _mint(_to, id);
-    _setTokenURI(id, string(abi.encodePacked(baseURI, _tokenId, ".jpeg")));
+    _mint(_to, _id);
+    _setTokenURI(_id, string(abi.encodePacked(baseURI, _tokenId, ".json")));
 
     // Emit claim event
     emit Claim(_to, id);
+    id++;
   }
 }
 

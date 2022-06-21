@@ -97,7 +97,7 @@ export default class Generator {
     const proof = this.merkleTree.getHexProof(leaf);
     console.log("Proof for ", address);
     console.log(proof);
-    // console.log(this.merkleTree.verify(proof, leaf, "0x47e9b69fae42cb82b4cbb7d96c3c47f8714c7f47bd3d40ce0dd87456270abad2"))
+    console.log(this.merkleTree.verify(proof, leaf, "0xeea5ff7bbd6c0a9e718f290ab36ba394db43a1b9895fec2be4ef8cb85b861da3"))
     return proof;
   }
 }

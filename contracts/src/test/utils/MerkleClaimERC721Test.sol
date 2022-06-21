@@ -29,11 +29,11 @@ contract MerkleClaimERC721Test is DSTest {
       "My Token", 
       "MT", 
       // Merkle root containing ALICE but no BOB
-      0xa21be505af5f5455fad4bcb3d54ccc03f269c5e06945f1dbf6c96dfcb99fcbd0
+      0xeea5ff7bbd6c0a9e718f290ab36ba394db43a1b9895fec2be4ef8cb85b861da3
     );
 
     // Setup airdrop users
     ALICE = new MerkleClaimERC721User(TOKEN, 0xe66904a5318f27880bf1d20D77Ffa8FBdaC5E5E7); // 0xe66904a5318f27880bf1d20D77Ffa8FBdaC5E5E7
-    BOB = new MerkleClaimERC721User(TOKEN, 0x71c7E43E96C1e7bBc4D8eB50e165deeE267770D2); // 0x71c7E43E96C1e7bBc4D8eB50e165deeE267770D2
+    BOB = new MerkleClaimERC721User(TOKEN, 0x7A77B4a12830B2266783F69192c6cddEd93C959d); // 0x71c7E43E96C1e7bBc4D8eB50e165deeE267770D2
   }  
 }
