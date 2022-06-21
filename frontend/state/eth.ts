@@ -25,7 +25,7 @@ const wallets: (WalletModule | WalletInitOptions)[] = [
     walletName: "walletConnect",
     networkId,
     rpc: {
-      [networkId]: process.env.NEXT_PUBLIC_RPC_URL ?? "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+      [networkId]: process.env.NEXT_PUBLIC_RPC_URL ?? "",
     },
   },
 ];
@@ -61,7 +61,7 @@ function useEth() {
   const initializeOnboard = () => {
     // Onboard provider
     const onboard = Onboard({
-      networkId,
+      networkId: networkId,
       // Hide Blocknative branding
       hideBranding: true,
       // Setup custom wallets for selection

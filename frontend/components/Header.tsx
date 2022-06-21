@@ -71,7 +71,7 @@ export default function Header() {
             ? // If not connected, render connect wallet
               "Connect Wallet"
             : // Else, render address
-              `${address.substr(0, 6)}...
+              `${address.slice(0, 6)}...
                     ${address.slice(address.length - 4)}`}
         </button>
 

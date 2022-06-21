@@ -7,7 +7,7 @@ contract MyScript is Script{
     function run() external {
         vm.startBroadcast();
 
-        MerkleClaimERC721 MC721 = new MerkleClaimERC721("WEB3BRIDGE", "W3B", 0xeea5ff7bbd6c0a9e718f290ab36ba394db43a1b9895fec2be4ef8cb85b861da3);
+        WEB3BRIDGECERTIFICATE MC721 = new WEB3BRIDGECERTIFICATE("WEB3BRIDGE", "W3B", 0xeea5ff7bbd6c0a9e718f290ab36ba394db43a1b9895fec2be4ef8cb85b861da3);
 
         vm.stopBroadcast();
     }

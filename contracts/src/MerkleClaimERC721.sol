@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-pragma solidity >=0.8.0;
+pragma solidity 0.8.13;
 
 /// ============ Imports ============
 
@@ -14,7 +14,7 @@ import "@openzeppelin/utils/Strings.sol"; // OZ: Convert uint to string
 /// @notice ERC721 claimable by members of a merkle tree
 /// @author web3bridge CohortVI <contact@web3bridge.com>
 /// @dev Solmate ERC721 includes unused _burn logic that can be removed to optimize deployment cost
-contract MerkleClaimERC721 is ERC721URIStorage, Ownable {
+contract WEB3BRIDGECERTIFICATE is ERC721URIStorage, Ownable {
 
   /// ============ Mutable storage ============
 
@@ -25,7 +25,7 @@ contract MerkleClaimERC721 is ERC721URIStorage, Ownable {
   uint48 id;
 
   // token baseURI
-  string baseURI = "https://ipfs.io/ipfs/QmdZ4NBdqsNUcHzNn1hQtaagvEw3tCHR2kYUFtv8oQyqx5/";
+  string baseURI = "https://gateway.pinata.cloud/ipfs/QmZXNhCsWVQKkwPVUpk1sZAGBjx7gAFQNXjsAWhHvfSZgb/";
 
   /// @notice Mapping of addresses who have claimed tokens
   mapping(address => bool) public hasClaimed;

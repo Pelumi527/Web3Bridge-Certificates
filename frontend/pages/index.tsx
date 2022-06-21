@@ -37,7 +37,7 @@ export default function Home() {
         ) : null} */}
 
         {/* Project heading */}
-        <h1>{heading}</h1>
+        {/* <h1>{heading}</h1> */}
 
         {/* Project description */}
         {/* <p>{description}</p> */}

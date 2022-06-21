@@ -4,7 +4,7 @@ pragma solidity >=0.8.0;
 /// ============ Imports ============
 
 import { DSTest } from "ds-test/test.sol"; // DSTest
-import { MerkleClaimERC721 } from "../../MerkleClaimERC721.sol"; // MerkleClaimERC721
+import { WEB3BRIDGECERTIFICATE } from "../../MerkleClaimERC721.sol"; // MerkleClaimERC721
 import { MerkleClaimERC721User } from "./MerkleClaimERC721User.sol"; // MerkleClaimERC721 user
 
 /// @title MerkleClaimERC721Test
@@ -15,7 +15,7 @@ contract MerkleClaimERC721Test is DSTest {
   /// ============ Storage ============
 
   /// @dev MerkleClaimERC721 contract
-  MerkleClaimERC721 internal TOKEN;
+  WEB3BRIDGECERTIFICATE internal TOKEN;
   /// @dev User: Alice (in merkle tree)
   MerkleClaimERC721User internal ALICE;
   /// @dev User: Bob (not in merkle tree)
@@ -25,7 +25,7 @@ contract MerkleClaimERC721Test is DSTest {
 
   function setUp() public virtual {
     // Create airdrop token
-    TOKEN = new MerkleClaimERC721(
+    TOKEN = new WEB3BRIDGECERTIFICATE(
       "My Token", 
       "MT", 
       // Merkle root containing ALICE but no BOB

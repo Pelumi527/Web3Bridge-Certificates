@@ -3,7 +3,7 @@ pragma solidity >=0.8.0;
 
 /// ============ Imports ============
 
-import { MerkleClaimERC721 } from "../../MerkleClaimERC721.sol"; // MerkleClaimERC721
+import { WEB3BRIDGECERTIFICATE } from "../../MerkleClaimERC721.sol"; // MerkleClaimERC721
 
 /// @title MerkleClaimERC721User
 /// @notice Mock MerkleClaimERC721 user
@@ -13,14 +13,14 @@ contract MerkleClaimERC721User {
   /// ============ Immutable storage ============
 
   /// @dev MerkleClaimERC721 contract
-  MerkleClaimERC721 immutable internal TOKEN;
+  WEB3BRIDGECERTIFICATE immutable internal TOKEN;
   address immutable public ADDRESS;
 
   /// ============ Constructor ============
 
   /// @notice Creates a new MerkleClaimERC721User
   /// @param _TOKEN MerkleClaimERC721 contract
-  constructor(MerkleClaimERC721 _TOKEN, address _ADDRESS) {
+  constructor(WEB3BRIDGECERTIFICATE _TOKEN, address _ADDRESS) {
     TOKEN = _TOKEN;
     ADDRESS = _ADDRESS;
   }

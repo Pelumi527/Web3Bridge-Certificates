@@ -29,12 +29,14 @@ export default function Claim() {
   // Local button loading
   const [buttonLoading, setButtonLoading] = useState<boolean>(false);
 
+  //const contractAddress = env.NEXT_PUBLIC_CONTRACT_ADDRESS;
   const addLink = () => {
     if (typeof address==='string') {
       let index = addressList[address];
-      location.href = `https://bafybeigceihbii6flqhdtnvleu4wiwbsekbju2hzbsjjw2nmv5u752fywq.ipfs.dweb.link/${index}.jpeg`;
+      location.href = `https://rarible.com/collection/polygon/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`;
     }
   }
+  
   /**
    * Claims airdrop with local button loading
    */
