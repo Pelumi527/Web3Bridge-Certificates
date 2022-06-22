@@ -127,4 +127,4 @@ function useEth() {
 }
 
 // Create unstated-next container
-export const eth = createContainer(useEth);
+export const Eth = createContainer(useEth);

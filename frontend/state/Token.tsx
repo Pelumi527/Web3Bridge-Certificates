@@ -1,11 +1,11 @@
 import {config} from "../config"; // Airdrop config
-import { eth } from "state/eth"; // ETH state provider
+import { Eth } from "state/Eth"; // ETH state provider
 import { ethers } from "ethers"; // Ethers
 import keccak256 from "keccak256"; // Keccak256 hashing
 import MerkleTree from "merkletreejs"; // MerkleTree.js
 import { useEffect, useState } from "react"; // React
 import { createContainer } from "unstated-next"; // State management
-import { networkId } from "./eth";
+import { networkId } from "./Eth";
 /**
  * Generate Merkle Tree leaf from address and value
  * @param {string} address of airdrop claimee
@@ -44,7 +44,7 @@ function useToken() {
   }: {
     address: string | null;
     provider: ethers.providers.Web3Provider | null;
-  } = eth.useContainer();
+  } = Eth.useContainer();
 
   // Local state
   const [dataLoading, setDataLoading] = useState<boolean>(true); // Data retrieval status
@@ -188,7 +188,7 @@ function useToken() {
 }
 
 // Create unstated-next container
-export const token = createContainer(useToken);
+export const Token = createContainer(useToken);
 function showNetworkErrorAlert() {
   alert(
     `Invalid Network, please connect to ${process.env.NEXT_PUBLIC_RPC_NETWORK_NAME}`

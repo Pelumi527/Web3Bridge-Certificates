@@ -1,5 +1,5 @@
-import { eth } from "state/eth"; // Eth state provider
-import { token } from "state/token"; // Token state provider
+import { Eth } from "state/Eth"; // Eth state provider
+import { Token } from "state/Token"; // Token state provider
 import type { ReactElement } from "react"; // Types
 
 /**
@@ -13,9 +13,10 @@ export default function StateProvider({
   children: ReactElement | ReactElement[];
 }): ReactElement {
   return (
-    // Wrap in sub-providers
-    <eth.Provider>
-      <token.Provider>{children}</token.Provider>
-    </eth.Provider>
+    <>
+      <Eth.Provider>
+        <Token.Provider>{children}</Token.Provider>
+      </Eth.Provider>
+    </>
   );
 }

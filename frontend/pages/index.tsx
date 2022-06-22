@@ -1,5 +1,5 @@
 import Image from "next/image"; // Images
-import { eth } from "state/eth"; // State container
+import { Eth } from "state/Eth"; // State container
 import Layout from "components/Layout"; // Layout wrapper
 import { useRouter } from "next/router"; // Routing
 import styles from "styles/pages/Home.module.scss"; // Page styles
@@ -14,7 +14,7 @@ export default function Home() {
   // Routing
   const { push } = useRouter();
   // Authentication status
-  const { address }: { address: string | null } = eth.useContainer();
+  const { address }: { address: string | null } = Eth.useContainer();
 
   return (
     <Layout>

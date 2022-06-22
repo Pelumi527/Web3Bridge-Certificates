@@ -1,6 +1,6 @@
-import { eth } from "state/eth"; // Global state: ETH
+import { Eth } from "state/Eth"; // Global state: ETH
 import { useState } from "react"; // State management
-import { token } from "state/token"; // Global state: Tokens
+import { Token } from "state/Token"; // Global state: Tokens
 import Layout from "components/Layout"; // Layout wrapper
 import styles from "styles/pages/Claim.module.scss"; // Page styles
 // import { AddressList } from '../components/addresses';
@@ -12,7 +12,7 @@ export default function Claim() {
   const addressList = config.airdrop;
   // Global ETH state
   const { address, unlock }: { address: string | null; unlock: Function } =
-    eth.useContainer();
+    Eth.useContainer();
   // Global token state
   const {
     dataLoading,
@@ -24,7 +24,7 @@ export default function Claim() {
     tokenId: string |  null;
     alreadyClaimed: boolean;
     claimAirdrop: Function;
-  } = token.useContainer();
+  } = Token.useContainer();
 
   // Local button loading
   const [buttonLoading, setButtonLoading] = useState<boolean>(false);

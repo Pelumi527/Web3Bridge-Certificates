@@ -1,6 +1,6 @@
 import Link from "next/link"; // Dynamic routing
 import Image from "next/image"; // Images
-import { eth } from "state/eth"; // Global state
+import { Eth } from "state/Eth"; // Global state
 import { useState } from "react"; // State management
 import styles from "styles/components/Header.module.scss"; // Component styles
 
@@ -42,7 +42,7 @@ const threeDotsImage: string =
 export default function Header() {
   // Global state
   const { address, unlock }: { address: string | null; unlock: Function } =
-    eth.useContainer();
+    Eth.useContainer();
   // Action menu open state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
