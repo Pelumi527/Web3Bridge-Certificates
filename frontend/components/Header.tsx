@@ -52,12 +52,11 @@ export default function Header() {
       <div className={styles.header__logo}>
         <Link href="/">
           <a>
-            <Image
+            <img
               src="/croppedLogo.png"
               alt="Logo"
               width={40}
               height={60}
-              priority
             />
           </a>
         </Link>
