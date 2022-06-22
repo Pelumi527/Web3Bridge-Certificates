@@ -21,7 +21,7 @@ export default function Home() {
       <div className={styles.home}>
         {/* Project logo */}
         <div>
-          <Image src="/logo.png" alt="Logo" width={350} height={150} priority />
+          <img src="/logo.png" alt="Logo" width={350} height={150} />
         </div>
 
         {/* Project introduction article, if it exists */}
